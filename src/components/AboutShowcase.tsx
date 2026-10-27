@@ -5,6 +5,7 @@ const principles = [
     title: 'Public work only',
     copy: 'Only projects cleared for public display are listed. A production version would read approved rows from Supabase through row-level security.',
   },
+  // 
   {
     title: 'Search, then browse',
     copy: 'Search reads project titles and creator names. Track filters narrow the archive without hiding where the work came from.',

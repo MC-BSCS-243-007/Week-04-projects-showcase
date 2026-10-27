@@ -8,7 +8,7 @@ A curated project gallery built for **Internlytic Technologies — Phase 2 Front
 
 The showcase presents **two existing Phase 2 projects**, each linked to its public Netlify deployment. The records describe real work rather than placeholder content: titles, descriptions, technology stacks and thumbnails all match the deployed sites, and every card links straight to the live page.
 
-| Project | Track | Live deployment |
+| Project | Track | Live deployment ||
 | --- | --- | --- |
 | Jhon Portfolio | Web app | <https://week-02-portfolio.netlify.app/> |
 | GitHub Profile Finder | Web app | <https://week-03-github-finder.netlify.app/> |
@@ -245,5 +245,6 @@ A GitHub Pages workflow lives at `.github/workflows/deploy.yml`. It runs on push
 ---
 
 Built for Internlytic Technologies · Phase 2 / Week 04 · 2026.
-#   W e e k - 0 4 - p r o j e c t s - s h o w c a s e  
+#   W e e k - 0 4 - p r o j e c t s - s h o w c a s e 
+ 
  

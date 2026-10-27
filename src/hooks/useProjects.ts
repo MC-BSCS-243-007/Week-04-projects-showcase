@@ -10,6 +10,7 @@ type GalleryState = {
   error: string | null
 }
 
+
 export function useProjects() {
   const demo = useMemo<DemoState | null>(() => getDemoState(), [])
   const [attempt, setAttempt] = useState(0)
@@ -53,3 +54,4 @@ export function useProjects() {
 
   return { ...state, demo, retry }
 }
+// 

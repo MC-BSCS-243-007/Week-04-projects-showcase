@@ -19,7 +19,7 @@ export type Project = {
   approvalStatus: ApprovalStatus
   createdAt: string
 }
-
+// 
 export function trackSlug(track: Track) {
   return track.toLowerCase().replace(/\s+/g, '-')
 }

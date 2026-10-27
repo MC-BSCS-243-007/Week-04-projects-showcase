@@ -7,7 +7,7 @@ import type { Project } from '../types'
  * Repository links are omitted rather than pointing at an unverified repo.
  * `createdAt` records when the entry was added to this showcase, not the
  * original build date.
- */
+ */  
 export const showcaseProjects: Project[] = [
   {
     id: 'week-02-portfolio',
