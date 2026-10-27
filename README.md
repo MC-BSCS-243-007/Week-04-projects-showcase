@@ -245,3 +245,5 @@ A GitHub Pages workflow lives at `.github/workflows/deploy.yml`. It runs on push
 ---
 
 Built for Internlytic Technologies · Phase 2 / Week 04 · 2026.
+#   W e e k - 0 4 - p r o j e c t s - s h o w c a s e  
+ 
