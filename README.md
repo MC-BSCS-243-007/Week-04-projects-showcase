@@ -2,13 +2,12 @@
 
 A curated project gallery built for **Internlytic Technologies — Phase 2 Front-End Development, Week 04**. Visitors can browse the archive, search by project title or intern name, filter by track and open any project for its full story and live deployment.
 
-![Internlytic Phase 2 projects showcase](docs/preview-desktop.jpg)
 
 ## Overview
 
 The showcase presents **two existing Phase 2 projects**, each linked to its public Netlify deployment. The records describe real work rather than placeholder content: titles, descriptions, technology stacks and thumbnails all match the deployed sites, and every card links straight to the live page.
 
-| Project | Track | Live deployment ||
+| Project | Track | Live deployment |
 | --- | --- | --- |
 | Jhon Portfolio | Web app | <https://week-02-portfolio.netlify.app/> |
 | GitHub Profile Finder | Web app | <https://week-03-github-finder.netlify.app/> |
@@ -36,13 +35,6 @@ No production Internlytic data, private records or credentials are included. Rep
   <img src="docs/preview-mobile.jpg" width="360" alt="Mobile gallery with search and track filters" />
 </p>
 
-| Empty gallery | Error state |
-| --- | --- |
-| ![Empty gallery state](docs/preview-empty.jpg) | ![Gallery error state with retry](docs/preview-error.jpg) |
-
-| No-results view |
-| --- |
-| ![No projects match the vite search](docs/preview-no-results.jpg) |
 
 ## Tech stack
 
@@ -68,9 +60,6 @@ npm run preview  # preview the production build
 
 The dev server prints its local URL (Vite defaults to `http://localhost:5173`).
 
-## Live demo
-
-**Not published yet.** The project is ready for GitHub Pages through the included workflow, but it has not been pushed or enabled because the repository authentication step is still pending. The public URL will be added here after the first deployment:
 
 ```text
 https://<your-username>.github.io/<repository-name>/
