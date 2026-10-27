@@ -49,18 +49,18 @@ export function AboutShowcase() {
 
           <p className="about-copy-text">
             Each entry follows the shape of a real submission record — creator,
-            track, summary, stack and links. The five projects here are existing
+            track, summary, stack and links. Both projects here are existing
             live deployments; external links render only when a project supplies
             a valid public URL.
           </p>
 
           <div className="about-facts">
             <div>
-              <strong>02</strong>
-              <span>Tracks</span>
+              <strong>01</strong>
+              <span>Track</span>
             </div>
             <div>
-              <strong>05</strong>
+              <strong>02</strong>
               <span>Live projects</span>
             </div>
             <div>
@@ -93,7 +93,7 @@ export function AboutShowcase() {
             <Icon name="sparkle" size={18} />
           </span>
           <p>
-            <strong>Data &amp; privacy.</strong> This gallery runs on five
+            <strong>Data &amp; privacy.</strong> This gallery runs on two
             existing public projects. There is no production Internlytic
             database connection; a production version would read only approved
             rows from Supabase through row-level security, link each project to

@@ -6,13 +6,10 @@ A curated project gallery built for **Internlytic Technologies — Phase 2 Front
 
 ## Overview
 
-The showcase presents **five existing Phase 2 projects**, each linked to its public Netlify deployment. The records are real work rather than placeholder content: titles, descriptions, technology stacks and thumbnails all describe the deployed sites, and every card links straight to the live page.
+The showcase presents **two existing Phase 2 projects**, each linked to its public Netlify deployment. The records describe real work rather than placeholder content: titles, descriptions, technology stacks and thumbnails all match the deployed sites, and every card links straight to the live page.
 
 | Project | Track | Live deployment |
 | --- | --- | --- |
-| Fashion Store | E-commerce | <https://fashion-shop2468.netlify.app/> |
-| Shopsy | E-commerce | <https://shopsy-12345.netlify.app/> |
-| TCJ-Space | Web app | <https://tcj-space1.netlify.app/> |
 | Jhon Portfolio | Web app | <https://week-02-portfolio.netlify.app/> |
 | GitHub Profile Finder | Web app | <https://week-03-github-finder.netlify.app/> |
 
@@ -23,7 +20,7 @@ No production Internlytic data, private records or credentials are included. Rep
 - **Gallery cards** with a real project screenshot, title, intern name, track, short description, technology tags, a **View project** action and a **Live** link to the deployment.
 - **Project detail dialog** with the screenshot, full description, technology stack, the date the entry was added to the archive, approval status and conditional project links. Closes with Escape, the close button or a backdrop click, and returns focus to the card that opened it.
 - **Search by project title or intern name** — case- and accent-insensitive, with a `/` keyboard shortcut and Escape to clear.
-- **Track filters** (Web app, E-commerce) with live project counts, `aria-pressed` state and a one-click reset. Search and track filters combine.
+- **Track filters** with live project counts, `aria-pressed` state and a one-click reset. Only tracks present in the archive are offered, so the toolbar never advertises an empty category. Search and track filters combine.
 - **Honest states** — skeleton loading, an empty gallery, a no-results view with the active query and a retryable error message.
 - **Demo state previews** through query parameters (`?demo=loading`, `?demo=empty`, `?demo=error`) without changing the archive data.
 - **Safe external links** — only `http(s)` URLs are rendered, links are conditional and open in a new tab with `rel="noreferrer"`.
@@ -33,7 +30,7 @@ No production Internlytic data, private records or credentials are included. Rep
 
 | Gallery | Project detail |
 | --- | --- |
-| ![Gallery with search and track filters](docs/preview-gallery.jpg) | ![Project detail dialog for Fashion Store](docs/preview-dialog.jpg) |
+| ![Gallery with search and track filters](docs/preview-gallery.jpg) | ![Project detail dialog for Jhon Portfolio](docs/preview-dialog.jpg) |
 
 <p align="center">
   <img src="docs/preview-mobile.jpg" width="360" alt="Mobile gallery with search and track filters" />
@@ -45,7 +42,7 @@ No production Internlytic data, private records or credentials are included. Rep
 
 | No-results view |
 | --- |
-| ![No projects match the tailwind search](docs/preview-no-results.jpg) |
+| ![No projects match the vite search](docs/preview-no-results.jpg) |
 
 ## Tech stack
 
@@ -79,7 +76,7 @@ The dev server prints its local URL (Vite defaults to `http://localhost:5173`).
 https://<your-username>.github.io/<repository-name>/
 ```
 
-Until then, use the local commands above. `vite.config.ts` sets `base: './'`, so a build also works from a project subpath. The five featured projects are themselves live at the Netlify URLs listed in the overview table.
+Until then, use the local commands above. `vite.config.ts` sets `base: './'`, so a build also works from a project subpath. Both featured projects are themselves live at the Netlify URLs listed in the overview table.
 
 ## Demo state previews
 
@@ -113,7 +110,7 @@ The UI is typed against the fields a Supabase record would supply. `approvalStat
 | `approvalStatus` | `'approved' \| 'pending'` | Only `approved` records are displayed. |
 | `createdAt` | ISO date string | Date the entry was added to this archive; used for ordering. |
 
-The five records live in [`src/data/projects.ts`](src/data/projects.ts). Their thumbnails are screenshots of the deployed sites captured at 1440 × 900, and `createdAt` records when each entry joined this showcase rather than the original build date. `githubUrl` is `null` for every record because no verified public repository exists for them; the interface never invents destinations.
+The two records live in [`src/data/projects.ts`](src/data/projects.ts). Both are Web app projects, so the gallery offers the **All projects** and **Web app** filters; the model still supports E-commerce for future submissions. Thumbnails are screenshots of the deployed sites captured at 1440 × 900, and `createdAt` records when each entry joined this showcase rather than the original build date. `githubUrl` is `null` for both records because no verified public repository exists for them; the interface never invents destinations.
 
 ## Future Supabase integration
 
@@ -181,8 +178,8 @@ Supabase's public anon key is designed to be visible; it is still read from `VIT
 
 Verified in Chrome with Playwright:
 
-- search by project title (`Shopsy` → one result) and by intern name (`Jhon` → all five), a technology keyword (correctly no results, because search is scoped to title and intern), Escape to clear and the `/` shortcut;
-- track filters and their counts (`E-commerce` → two results), a combined search and filter, a conflicting combination that keeps the honest no-results copy, and reset;
+- search by project title (`portfolio` → one result) and by intern name (`Jhon` → both projects), a technology keyword (`vite`, correctly no results because search is scoped to title and intern), Escape to clear and the `/` shortcut;
+- track filters and their counts (`Web app` → two results, and the empty E-commerce chip is not rendered), a combined search and filter, a conflicting combination that keeps the honest no-results copy, and reset;
 - every card exposes exactly one `Live` link pointing at the supplied deployment with `target="_blank"` and `rel="noreferrer"`, and no fabricated repository link;
 - dialog open, title, live flag, deployment link, body scroll lock, Escape close, backdrop close, close button and focus return;
 - empty, loading, error and retry flows through the demo parameters; no-results copy with the active query;
@@ -201,7 +198,7 @@ Brand palette used across the interface:
 | White | `#FFFFFF` | Cards and content surfaces |
 | Light background | `#EAF7F4` | Page and section tint |
 
-Typography pairs Instrument Serif for editorial headlines with Manrope for interface text. Card and dialog artwork is screenshots of the five deployed projects, cropped to a consistent 8:5 ratio; the hero collage reuses three of them as layered preview cards.
+Typography pairs Instrument Serif for editorial headlines with Manrope for interface text. Card and dialog artwork is screenshots of the two deployed projects, cropped to a consistent 8:5 ratio; the hero collage layers the same two captures as desktop-style preview cards.
 
 > **Logo note:** the official Internlytic logo file was not supplied with this brief. The header uses a clearly marked typographic placeholder wordmark and lettermark, with fixed proportions and no distortion. Replace the mark in [`src/components/BrandMark.tsx`](src/components/BrandMark.tsx) and [`public/favicon.svg`](public/favicon.svg) when the official asset is available.
 
@@ -212,7 +209,7 @@ src/
   App.tsx                  Page composition and skip link
   components/              Header, Hero, gallery toolbar, cards, dialog,
                            states, About panel, Footer, BrandMark, Icon
-  data/projects.ts         Five approved live-project records
+  data/projects.ts         Two approved live-project records
   hooks/useProjects.ts     Loading, success and error state machine
   lib/projects.ts          Async loader and demo-state handling
   lib/format.ts            Search, date formatting and safe URL helpers
@@ -220,7 +217,7 @@ src/
   types.ts                 Track, approval status and Project types
 docs/                      README preview images
 public/
-  thumbnails/              Five screenshots of the live projects
+  thumbnails/              Two screenshots of the live projects
   favicon.svg              Placeholder brand mark
   og-cover.jpg             1200 × 630 social cover
 ```
@@ -236,7 +233,7 @@ A GitHub Pages workflow lives at `.github/workflows/deploy.yml`. It runs on push
 
 ## Limitations
 
-- The five records describe existing public deployments owned by the intern; the gallery itself has no production database connection.
+- The two records describe existing public deployments owned by the intern; the gallery itself has no production database connection.
 - Repository links are omitted because no verified public repository exists for these projects. The UI adds those buttons automatically when a valid URL is present.
 - Thumbnails are static captures of the live sites; if a deployment changes, its screenshot drifts until it is recaptured.
 - The official Internlytic logo was not provided; the current wordmark is a documented placeholder.

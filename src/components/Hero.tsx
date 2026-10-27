@@ -30,8 +30,8 @@ export function Hero() {
 
           <p className="hero-lede">
             A curated gallery of interfaces and products built through Phase 2.
-            Search the archive, follow a track, and open the story behind each
-            project.
+            Search the archive, open a project, and step into its live
+            deployment.
           </p>
 
           <div className="hero-actions">
@@ -48,7 +48,7 @@ export function Hero() {
           <ul className="hero-facts">
             <li>
               <Icon name="grid" size={15} />
-              Two tracks
+              Web app track
             </li>
             <li>
               <Icon name="check" size={15} />
@@ -56,7 +56,7 @@ export function Hero() {
             </li>
             <li>
               <Icon name="layers" size={15} />
-              Five projects
+              Two projects
             </li>
           </ul>
         </div>

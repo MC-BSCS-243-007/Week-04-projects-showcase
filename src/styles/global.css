@@ -2242,8 +2242,8 @@ ol {
   }
 
   .hero-seal {
-    bottom: 6%;
-    right: 2%;
+    bottom: 0;
+    right: -3%;
   }
 
   .hero-visual,

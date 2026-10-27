@@ -46,6 +46,16 @@ export function ProjectsPage() {
     [projects, query, track],
   )
 
+  // Only offer tracks that the archive actually contains, so the toolbar never
+  // advertises an empty category.
+  const filterTracks = useMemo(
+    () =>
+      status === 'success'
+        ? TRACKS.filter((item) => counts[item] > 0)
+        : [...TRACKS],
+    [counts, status],
+  )
+
   const isFiltering = query.trim().length > 0 || track !== 'all'
 
   let summary = 'Loading projects…'
@@ -98,8 +108,8 @@ export function ProjectsPage() {
             </h2>
             <p className="section-note">
               A working gallery built around the way the real showcase will
-              read. Search the archive, narrow by track, then open a project for
-              the full story.
+              read. Search the archive, open a project for the full story, then
+              visit its live deployment.
             </p>
           </div>
         </div>
@@ -123,7 +133,7 @@ export function ProjectsPage() {
             counts={status === 'success' ? counts : undefined}
             onChange={setTrack}
             total={projects.length}
-            tracks={[...TRACKS]}
+            tracks={filterTracks}
           />
 
           <div className="toolbar-foot">
@@ -180,7 +190,7 @@ export function ProjectsPage() {
 
         <p className="sample-note">
           <Icon name="info" size={15} />
-          Five existing Phase 2 projects, each linked to its public deployment.
+          Two existing Phase 2 projects, each linked to its public deployment.
           Only work cleared for public display should appear in a production
           gallery.
         </p>
