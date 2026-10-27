@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Dashboard illustration with metric cards and a rising trend chart">
+  <defs>
+    <linearGradient id="pulseBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d545b"/>
+      <stop offset="1" stop-color="#073a40"/>
+    </linearGradient>
+    <linearGradient id="pulseLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8df0dd"/>
+      <stop offset="1" stop-color="#18b59a"/>
+    </linearGradient>
+    <linearGradient id="pulseArea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#18b59a" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#18b59a" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="pulseShadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#032a2e" flood-opacity=".5"/>
+    </filter>
+    <clipPath id="pulseChartClip">
+      <rect x="192" y="258" width="538" height="170" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#pulseBg)"/>
+  <circle cx="702" cy="56" r="96" fill="none" stroke="#ffffff" stroke-opacity=".07"/>
+  <circle cx="702" cy="56" r="142" fill="none" stroke="#ffffff" stroke-opacity=".045"/>
+  <circle cx="92" cy="470" r="120" fill="#18b59a" fill-opacity=".07"/>
+
+  <g filter="url(#pulseShadow)">
+    <rect x="56" y="58" width="688" height="388" rx="16" fill="#ffffff"/>
+    <path d="M56 74a16 16 0 0 1 16-16h656a16 16 0 0 1 16 16v30H56z" fill="#f1faf8"/>
+    <circle cx="79" cy="79" r="4.5" fill="#d3e8e4"/>
+    <circle cx="95" cy="79" r="4.5" fill="#d3e8e4"/>
+    <circle cx="111" cy="79" r="4.5" fill="#18b59a"/>
+    <rect x="286" y="68" width="228" height="22" rx="11" fill="#e7f5f2"/>
+    <text x="400" y="83" text-anchor="middle" fill="#7b9694" font-family="Manrope, Segoe UI, sans-serif" font-size="10" font-weight="600">app.pulse / weekly overview</text>
+    <line x1="56" y1="104" x2="744" y2="104" stroke="#e4f0ed"/>
+  </g>
+
+  <rect x="74" y="120" width="102" height="308" rx="12" fill="#073a40"/>
+  <g fill="#8df0dd">
+    <rect x="86" y="134" width="18" height="18" rx="5" fill="#18b59a"/>
+    <path d="M92 139h6M95 139v8M92 147h6" stroke="#073a40" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <text x="112" y="148" fill="#ffffff" font-family="Manrope, Segoe UI, sans-serif" font-size="12" font-weight="700">Pulse</text>
+  <rect x="86" y="170" width="78" height="26" rx="8" fill="#18b59a"/>
+  <rect x="96" y="180" width="42" height="5" rx="2.5" fill="#073a40"/>
+  <g fill="#ffffff" opacity=".4">
+    <circle cx="99" cy="216" r="3"/>
+    <rect x="108" y="213" width="44" height="5" rx="2.5"/>
+    <circle cx="99" cy="244" r="3"/>
+    <rect x="108" y="241" width="36" height="5" rx="2.5"/>
+    <circle cx="99" cy="272" r="3"/>
+    <rect x="108" y="269" width="48" height="5" rx="2.5"/>
+    <circle cx="99" cy="300" r="3"/>
+    <rect x="108" y="297" width="30" height="5" rx="2.5"/>
+  </g>
+  <circle cx="125" cy="402" r="15" fill="#0d5157"/>
+  <text x="125" y="406" text-anchor="middle" fill="#8df0dd" font-family="Manrope, Segoe UI, sans-serif" font-size="9" font-weight="700">MC</text>
+
+  <text x="192" y="154" fill="#073a40" font-family="Manrope, Segoe UI, sans-serif" font-size="21" font-weight="800" letter-spacing="-.4">Weekly pulse</text>
+  <text x="192" y="172" fill="#7b9694" font-family="Manrope, Segoe UI, sans-serif" font-size="9" font-weight="600">Oct 14 — Oct 20 · Sample data</text>
+  <rect x="626" y="132" width="104" height="30" rx="15" fill="#18b59a"/>
+  <text x="678" y="151" text-anchor="middle" fill="#05343a" font-family="Manrope, Segoe UI, sans-serif" font-size="10" font-weight="800">Export report</text>
+
+  <g>
+    <rect x="192" y="188" width="171" height="54" rx="10" fill="#f5fbf9" stroke="#e3efec"/>
+    <text x="204" y="205" fill="#6b8785" font-family="Manrope, Segoe UI, sans-serif" font-size="8" font-weight="700" letter-spacing=".6">ACTIVE USERS</text>
+    <text x="204" y="230" fill="#073a40" font-family="Manrope, Segoe UI, sans-serif" font-size="21" font-weight="800">12.4k</text>
+    <text x="304" y="230" fill="#0a7969" font-family="Manrope, Segoe UI, sans-serif" font-size="8" font-weight="700">+8.2%</text>
+  </g>
+  <g>
+    <rect x="375" y="188" width="171" height="54" rx="10" fill="#f5fbf9" stroke="#e3efec"/>
+    <text x="387" y="205" fill="#6b8785" font-family="Manrope, Segoe UI, sans-serif" font-size="8" font-weight="700" letter-spacing=".6">RETENTION</text>
+    <text x="387" y="230" fill="#073a40" font-family="Manrope, Segoe UI, sans-serif" font-size="21" font-weight="800">86%</text>
+    <text x="467" y="230" fill="#0a7969" font-family="Manrope, Segoe UI, sans-serif" font-size="8" font-weight="700">+2.4%</text>
+  </g>
+  <g>
+    <rect x="558" y="188" width="172" height="54" rx="10" fill="#f5fbf9" stroke="#e3efec"/>
+    <text x="570" y="205" fill="#6b8785" font-family="Manrope, Segoe UI, sans-serif" font-size="8" font-weight="700" letter-spacing=".6">SESSIONS</text>
+    <text x="570" y="230" fill="#073a40" font-family="Manrope, Segoe UI, sans-serif" font-size="21" font-weight="800">4.2m</text>
+    <text x="664" y="230" fill="#0a7969" font-family="Manrope, Segoe UI, sans-serif" font-size="8" font-weight="700">+5.1%</text>
+  </g>
+
+  <rect x="192" y="258" width="538" height="170" rx="12" fill="#fbfefd" stroke="#e3efec"/>
+  <text x="208" y="280" fill="#073a40" font-family="Manrope, Segoe UI, sans-serif" font-size="11" font-weight="700">Active sessions</text>
+  <circle cx="638" cy="275" r="3.5" fill="#18b59a"/>
+  <text x="647" y="279" fill="#7b9694" font-family="Manrope, Segoe UI, sans-serif" font-size="8" font-weight="600">This week</text>
+
+  <g stroke="#eaf3f1" stroke-width="1">
+    <line x1="208" y1="300" x2="714" y2="300"/>
+    <line x1="208" y1="330" x2="714" y2="330"/>
+    <line x1="208" y1="360" x2="714" y2="360"/>
+    <line x1="208" y1="390" x2="714" y2="390"/>
+    <line x1="208" y1="416" x2="714" y2="416"/>
+  </g>
+
+  <g clip-path="url(#pulseChartClip)">
+    <path d="M208 404C244 396 252 372 286 368S332 382 360 352 408 330 438 338 480 306 512 300 554 318 586 286 636 272 670 256 704 246 722 232V416H208Z" fill="url(#pulseArea)"/>
+    <path d="M208 404C244 396 252 372 286 368S332 382 360 352 408 330 438 338 480 306 512 300 554 318 586 286 636 272 670 256 704 246 722 232" fill="none" stroke="url(#pulseLine)" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="586" cy="286" r="4.2" fill="#ffffff" stroke="#18b59a" stroke-width="2.4"/>
+    <rect x="556" y="264" width="60" height="17" rx="5" fill="#073a40"/>
+    <text x="586" y="276" text-anchor="middle" fill="#ffffff" font-family="Manrope, Segoe UI, sans-serif" font-size="8" font-weight="700">8,240</text>
+  </g>
+  <g fill="#9ab4b0" font-family="Manrope, Segoe UI, sans-serif" font-size="7" font-weight="600">
+    <text x="208" y="423">Mon</text>
+    <text x="292" y="423">Tue</text>
+    <text x="376" y="423">Wed</text>
+    <text x="460" y="423">Thu</text>
+    <text x="544" y="423">Fri</text>
+    <text x="628" y="423">Sat</text>
+    <text x="700" y="423">Sun</text>
+  </g>
+</svg>
