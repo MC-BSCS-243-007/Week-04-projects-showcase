@@ -8,6 +8,7 @@ import type { Project } from '../types'
  * `createdAt` records when the entry was added to this showcase, not the
  * original build date.
  */  
+
 export const showcaseProjects: Project[] = [
   {
     id: 'week-02-portfolio',
