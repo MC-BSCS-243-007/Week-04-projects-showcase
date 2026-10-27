@@ -26,7 +26,7 @@ export function Footer() {
       <div className="container footer-fine">
         <p>
           <span aria-hidden="true" className="footer-dot" />
-          Sample data only — interns, projects and links are fictional.
+          Existing work — project links open their public Netlify deployments.
         </p>
         <p>
           Wordmark is a placeholder pending the official Internlytic logo asset.

@@ -1,31 +1,39 @@
 # Internlytic — Phase 2 Projects Showcase
 
-A curated project gallery built for **Internlytic Technologies — Phase 2 Front-End Development, Week 04**. Visitors can browse the cohort, search by project title or intern name, filter by track and open any project for its full story.
+A curated project gallery built for **Internlytic Technologies — Phase 2 Front-End Development, Week 04**. Visitors can browse the archive, search by project title or intern name, filter by track and open any project for its full story and live deployment.
 
 ![Internlytic Phase 2 projects showcase](docs/preview-desktop.jpg)
 
 ## Overview
 
-The showcase is a working concept for the final Internlytic gallery. It uses **eight clearly labelled fictional projects** across four tracks — Web app, Dashboard, E-commerce and Mobile — so the layout, filtering and detail experience can be reviewed before real intern records are connected.
+The showcase presents **five existing Phase 2 projects**, each linked to its public Netlify deployment. The records are real work rather than placeholder content: titles, descriptions, technology stacks and thumbnails all describe the deployed sites, and every card links straight to the live page.
 
-No production Internlytic data, private records or credentials are included. Every intern, project, date and thumbnail in this repository is sample content.
+| Project | Track | Live deployment |
+| --- | --- | --- |
+| Fashion Store | E-commerce | <https://fashion-shop2468.netlify.app/> |
+| Shopsy | E-commerce | <https://shopsy-12345.netlify.app/> |
+| TCJ-Space | Web app | <https://tcj-space1.netlify.app/> |
+| Jhon Portfolio | Web app | <https://week-02-portfolio.netlify.app/> |
+| GitHub Profile Finder | Web app | <https://week-03-github-finder.netlify.app/> |
+
+No production Internlytic data, private records or credentials are included. Repository links are omitted rather than pointing at unverified repositories; the interface adds a GitHub button automatically when a record carries a valid URL.
 
 ## Features
 
-- **Gallery cards** with a project thumbnail, title, intern name, track, short description, technology tags and a **View project** action.
-- **Project detail dialog** with the full description, technology stack, submission date, approval status and conditional project links. Closes with Escape, the close button or a backdrop click, and returns focus to the card that opened it.
+- **Gallery cards** with a real project screenshot, title, intern name, track, short description, technology tags, a **View project** action and a **Live** link to the deployment.
+- **Project detail dialog** with the screenshot, full description, technology stack, the date the entry was added to the archive, approval status and conditional project links. Closes with Escape, the close button or a backdrop click, and returns focus to the card that opened it.
 - **Search by project title or intern name** — case- and accent-insensitive, with a `/` keyboard shortcut and Escape to clear.
-- **Track filters** with live project counts, `aria-pressed` state and a one-click reset. Search and track filters combine.
+- **Track filters** (Web app, E-commerce) with live project counts, `aria-pressed` state and a one-click reset. Search and track filters combine.
 - **Honest states** — skeleton loading, an empty gallery, a no-results view with the active query and a retryable error message.
-- **Demo state previews** through query parameters (`?demo=loading`, `?demo=empty`, `?demo=error`) without changing the sample data.
-- **Safe external links** — only `http(s)` URLs are rendered, links are conditional and open in a new tab with `rel="noreferrer"`. Sample records intentionally have no live or repository links.
+- **Demo state previews** through query parameters (`?demo=loading`, `?demo=empty`, `?demo=error`) without changing the archive data.
+- **Safe external links** — only `http(s)` URLs are rendered, links are conditional and open in a new tab with `rel="noreferrer"`.
 - **Responsive layout** from 320 px phones to widescreen desktops, with consistent spacing, editorial typography and subtle interactions.
 - **Accessible by default** — skip link, labelled search, keyboard-operable dialog, live result summaries, visible focus rings and reduced-motion support.
 - **No tracking, no storage, no secrets** — the demo is entirely client-side.
 
 | Gallery | Project detail |
 | --- | --- |
-| ![Gallery with search and track filters](docs/preview-gallery.jpg) | ![Project detail dialog for Pulse Analytics](docs/preview-dialog.jpg) |
+| ![Gallery with search and track filters](docs/preview-gallery.jpg) | ![Project detail dialog for Fashion Store](docs/preview-dialog.jpg) |
 
 <p align="center">
   <img src="docs/preview-mobile.jpg" width="360" alt="Mobile gallery with search and track filters" />
@@ -37,7 +45,7 @@ No production Internlytic data, private records or credentials are included. Eve
 
 | No-results view |
 | --- |
-| ![No projects match the quantum search](docs/preview-no-results.jpg) |
+| ![No projects match the tailwind search](docs/preview-no-results.jpg) |
 
 ## Tech stack
 
@@ -45,7 +53,7 @@ No production Internlytic data, private records or credentials are included. Eve
 - Vite 8
 - Oxlint
 - Plain CSS with custom properties (no UI framework)
-- Original SVG thumbnails and favicon
+- Project screenshots captured from the live deployments as thumbnails
 
 No runtime dependencies beyond React are needed.
 
@@ -71,7 +79,7 @@ The dev server prints its local URL (Vite defaults to `http://localhost:5173`).
 https://<your-username>.github.io/<repository-name>/
 ```
 
-Until then, use the local commands above. `vite.config.ts` sets `base: './'`, so a build also works from a project subpath.
+Until then, use the local commands above. `vite.config.ts` sets `base: './'`, so a build also works from a project subpath. The five featured projects are themselves live at the Netlify URLs listed in the overview table.
 
 ## Demo state previews
 
@@ -81,11 +89,11 @@ Append one of these parameters to the local URL:
 | --- | --- |
 | `/?demo=loading` | Skeleton gallery held for 12 seconds, so the loading pace can be reviewed. |
 | `/?demo=empty` | The empty-gallery state with zero approved records. |
-| `/?demo=error` | A failed load with the retry action. Retrying restores the sample gallery. |
+| `/?demo=error` | A failed load with the retry action. Retrying restores the gallery. |
 
 Each preview includes a strip with a link back to the normal gallery. The normal app also shows its loading state briefly on first render.
 
-## Sample data model
+## Data model
 
 The UI is typed against the fields a Supabase record would supply. `approvalStatus` is checked before any record reaches the gallery.
 
@@ -94,18 +102,18 @@ The UI is typed against the fields a Supabase record would supply. `approvalStat
 | `id` | `string` | Stable record key. |
 | `projectTitle` | `string` | Card and dialog title. |
 | `internName` | `string` | Public display name of the creator. |
-| `track` | `'Web app' \| 'Dashboard' \| 'E-commerce' \| 'Mobile'` | Primary filter. |
+| `track` | `'Web app' \| 'E-commerce'` | Primary filter. |
 | `description` | `string` | Short card summary. |
 | `longDescription` | `string` | Full dialog copy. |
-| `thumbnailUrl` | `string` | Project screenshot or cover artwork. |
+| `thumbnailUrl` | `string` | Screenshot of the live project. |
 | `thumbnailAlt` | `string` | Descriptive alternative text. |
-| `liveUrl` | `string \| null` | Public demo, when supplied. |
+| `liveUrl` | `string \| null` | Public deployment, when supplied. |
 | `githubUrl` | `string \| null` | Public repository, when supplied. |
 | `technologies` | `string[]` | Technology stack tags. |
 | `approvalStatus` | `'approved' \| 'pending'` | Only `approved` records are displayed. |
-| `createdAt` | ISO date string | Submission date, used for newest-first ordering. |
+| `createdAt` | ISO date string | Date the entry was added to this archive; used for ordering. |
 
-The eight records live in [`src/data/projects.ts`](src/data/projects.ts). Their `liveUrl` and `githubUrl` values are deliberately `null`; the interface never invents destinations.
+The five records live in [`src/data/projects.ts`](src/data/projects.ts). Their thumbnails are screenshots of the deployed sites captured at 1440 × 900, and `createdAt` records when each entry joined this showcase rather than the original build date. `githubUrl` is `null` for every record because no verified public repository exists for them; the interface never invents destinations.
 
 ## Future Supabase integration
 
@@ -126,7 +134,7 @@ create table public.projects (
   id uuid primary key default gen_random_uuid(),
   project_title text not null,
   intern_name text not null,
-  track text not null check (track in ('Web app', 'Dashboard', 'E-commerce', 'Mobile')),
+  track text not null check (track in ('Web app', 'E-commerce')),
   description text not null,
   long_description text,
   thumbnail_url text,
@@ -173,9 +181,10 @@ Supabase's public anon key is designed to be visible; it is still read from `VIT
 
 Verified in Chrome with Playwright:
 
-- search by intern name (`Maya Chen` → one result), a technology keyword (correctly no results, because search is scoped to title and intern), Escape to clear and the `/` shortcut;
-- track filters and their counts (`Mobile` → two results), a combined search and filter, and reset;
-- dialog open, title, body scroll lock, Escape close, backdrop close, close button and focus return;
+- search by project title (`Shopsy` → one result) and by intern name (`Jhon` → all five), a technology keyword (correctly no results, because search is scoped to title and intern), Escape to clear and the `/` shortcut;
+- track filters and their counts (`E-commerce` → two results), a combined search and filter, a conflicting combination that keeps the honest no-results copy, and reset;
+- every card exposes exactly one `Live` link pointing at the supplied deployment with `target="_blank"` and `rel="noreferrer"`, and no fabricated repository link;
+- dialog open, title, live flag, deployment link, body scroll lock, Escape close, backdrop close, close button and focus return;
 - empty, loading, error and retry flows through the demo parameters; no-results copy with the active query;
 - keyboard Tab order, skip link, reduced motion, no console errors;
 - viewports at 320, 390, 768, 1024 and 1440 px with no horizontal overflow and no broken images;
@@ -192,7 +201,7 @@ Brand palette used across the interface:
 | White | `#FFFFFF` | Cards and content surfaces |
 | Light background | `#EAF7F4` | Page and section tint |
 
-Typography pairs Instrument Serif for editorial headlines with Manrope for interface text. All project artwork is original SVG illustration — no third-party images are used.
+Typography pairs Instrument Serif for editorial headlines with Manrope for interface text. Card and dialog artwork is screenshots of the five deployed projects, cropped to a consistent 8:5 ratio; the hero collage reuses three of them as layered preview cards.
 
 > **Logo note:** the official Internlytic logo file was not supplied with this brief. The header uses a clearly marked typographic placeholder wordmark and lettermark, with fixed proportions and no distortion. Replace the mark in [`src/components/BrandMark.tsx`](src/components/BrandMark.tsx) and [`public/favicon.svg`](public/favicon.svg) when the official asset is available.
 
@@ -203,15 +212,15 @@ src/
   App.tsx                  Page composition and skip link
   components/              Header, Hero, gallery toolbar, cards, dialog,
                            states, About panel, Footer, BrandMark, Icon
-  data/projects.ts         Eight fictional approved records
+  data/projects.ts         Five approved live-project records
   hooks/useProjects.ts     Loading, success and error state machine
-  lib/projects.ts          Async sample loader and demo-state handling
+  lib/projects.ts          Async loader and demo-state handling
   lib/format.ts            Search, date formatting and safe URL helpers
   styles/global.css        Tokens, layout, components, responsive rules
   types.ts                 Track, approval status and Project types
 docs/                      README preview images
 public/
-  thumbnails/              Eight original project illustrations
+  thumbnails/              Five screenshots of the live projects
   favicon.svg              Placeholder brand mark
   og-cover.jpg             1200 × 630 social cover
 ```
@@ -227,8 +236,9 @@ A GitHub Pages workflow lives at `.github/workflows/deploy.yml`. It runs on push
 
 ## Limitations
 
-- All current records, names and dates are fictional sample data; there is no production database connection.
-- Live and GitHub links are intentionally omitted because the sample projects have no real destinations. The UI adds those buttons automatically when a valid URL is present.
+- The five records describe existing public deployments owned by the intern; the gallery itself has no production database connection.
+- Repository links are omitted because no verified public repository exists for these projects. The UI adds those buttons automatically when a valid URL is present.
+- Thumbnails are static captures of the live sites; if a deployment changes, its screenshot drifts until it is recaptured.
 - The official Internlytic logo was not provided; the current wordmark is a documented placeholder.
 - The live demo is pending repository authentication and GitHub Pages setup.
 - Fonts load from Google Fonts; an offline browser falls back to system fonts.

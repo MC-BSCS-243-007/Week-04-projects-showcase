@@ -91,7 +91,7 @@ export function ProjectDialog({ onClose, project }: ProjectDialogProps) {
 
             <div className="dialog-content">
               <div className="dialog-flags">
-                <span className="flag flag-sample">Sample record</span>
+                <span className="flag flag-live">Live project</span>
                 <span className="flag flag-track">{project.track}</span>
               </div>
 
@@ -126,7 +126,7 @@ export function ProjectDialog({ onClose, project }: ProjectDialogProps) {
                   <div>
                     <dt>
                       <Icon name="calendar" size={14} />
-                      Submitted
+                      Added
                     </dt>
                     <dd>{formatProjectDate(project.createdAt)}</dd>
                   </div>
@@ -135,7 +135,7 @@ export function ProjectDialog({ onClose, project }: ProjectDialogProps) {
                       <Icon name="check" size={14} />
                       Status
                     </dt>
-                    <dd>Approved for showcase</dd>
+                    <dd>Live deployment</dd>
                   </div>
                 </dl>
               </div>
@@ -172,9 +172,9 @@ export function ProjectDialog({ onClose, project }: ProjectDialogProps) {
                 ) : (
                   <p className="dialog-note">
                     <Icon name="info" size={16} />
-                    This sample record was not supplied with a live or repository
-                    link. Link buttons appear here automatically when a project
-                    includes a valid URL.
+                    No public live demo or repository has been added to this
+                    record yet. Link buttons appear here automatically when a
+                    project includes a valid URL.
                   </p>
                 )}
               </div>

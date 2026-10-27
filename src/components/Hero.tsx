@@ -1,7 +1,7 @@
-import { sampleProjects } from '../data/projects'
+import { showcaseProjects } from '../data/projects'
 import { Icon } from './Icon'
 
-const previewProjects = sampleProjects.slice(0, 3)
+const previewProjects = showcaseProjects.slice(0, 3)
 
 export function Hero() {
   return (
@@ -29,9 +29,9 @@ export function Hero() {
           </h1>
 
           <p className="hero-lede">
-            A curated gallery of interfaces, products and experiments built by
-            Phase 2 interns. Search the cohort, follow a track, and open the
-            story behind each project.
+            A curated gallery of interfaces and products built through Phase 2.
+            Search the archive, follow a track, and open the story behind each
+            project.
           </p>
 
           <div className="hero-actions">
@@ -48,15 +48,15 @@ export function Hero() {
           <ul className="hero-facts">
             <li>
               <Icon name="grid" size={15} />
-              Four tracks
+              Two tracks
             </li>
             <li>
               <Icon name="check" size={15} />
-              Approved work only
+              Live deployments
             </li>
             <li>
               <Icon name="layers" size={15} />
-              Sample cohort
+              Five projects
             </li>
           </ul>
         </div>

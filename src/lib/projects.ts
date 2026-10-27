@@ -1,4 +1,4 @@
-import { sampleProjects } from '../data/projects'
+import { showcaseProjects } from '../data/projects'
 import type { Project } from '../types'
 
 const DEMO_STATES = ['loading', 'empty', 'error'] as const
@@ -46,7 +46,7 @@ type LoadProjectsOptions = {
 /**
  * Stands in for the future Supabase query. The small delay makes the demo's
  * loading state visible; `demo=empty` and `demo=error` make those states
- * reviewable without changing the sample records.
+ * reviewable without changing the gallery records.
  */
 export async function loadProjects({
   demo = null,
@@ -63,12 +63,12 @@ export async function loadProjects({
   await abortableDelay(delay, signal)
 
   if (demo === 'error' && !retry) {
-    throw new Error('The sample gallery service did not respond.')
+    throw new Error('The gallery service did not respond.')
   }
 
   if (demo === 'empty') return []
 
-  return sampleProjects
+  return showcaseProjects
     .filter((project) => project.approvalStatus === 'approved')
     .slice()
     .sort(

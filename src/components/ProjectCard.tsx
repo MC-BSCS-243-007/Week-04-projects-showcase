@@ -39,7 +39,7 @@ export function ProjectCard({ index, onOpen, project }: ProjectCardProps) {
           <span className="intern-copy">
             <strong>{project.internName}</strong>
             <span>
-              Phase 2 intern <span className="sample-word">· sample</span>
+              Phase 2 intern <span className="live-word">· live</span>
             </span>
           </span>
           <span className="track-pill">{project.track}</span>

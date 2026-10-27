@@ -17,8 +17,8 @@ import { SearchBar } from './SearchBar'
 
 const DEMO_COPY = {
   loading: 'Previewing the loading state. The gallery holds this view for twelve seconds.',
-  empty: 'Previewing the empty gallery state. No approved records are shown.',
-  error: 'Previewing the error state. Retrying will restore the sample gallery.',
+  empty: 'Previewing the empty gallery state. No projects are shown.',
+  error: 'Previewing the error state. Retrying will restore the gallery.',
 } as const
 
 export function ProjectsPage() {
@@ -48,7 +48,7 @@ export function ProjectsPage() {
 
   const isFiltering = query.trim().length > 0 || track !== 'all'
 
-  let summary = 'Loading approved projects…'
+  let summary = 'Loading projects…'
   if (status === 'success') {
     if (projects.length === 0) {
       summary = 'No projects have been published yet.'
@@ -57,7 +57,7 @@ export function ProjectsPage() {
     } else if (isFiltering) {
       summary = `Showing ${visibleProjects.length} of ${pluralize(projects.length, 'project')}.`
     } else {
-      summary = `${pluralize(projects.length, 'project')} from the Phase 2 cohort.`
+      summary = `${pluralize(projects.length, 'project')} from the Phase 2 archive.`
     }
   } else if (status === 'error') {
     summary = 'The gallery is unavailable.'
@@ -70,11 +70,11 @@ export function ProjectsPage() {
 
   let demoMessage = demo ? DEMO_COPY[demo] : ''
   if (demo === 'loading' && status === 'success') {
-    demoMessage = 'Loading preview complete. The sample gallery is now shown.'
+    demoMessage = 'Loading preview complete. The gallery is now shown.'
   }
   if (demo === 'error' && status === 'success') {
     demoMessage =
-      'The sample gallery is restored. Reloading this URL replays the error state.'
+      'The gallery is restored. Reloading this URL replays the error state.'
   }
 
   return (
@@ -98,7 +98,7 @@ export function ProjectsPage() {
             </h2>
             <p className="section-note">
               A working gallery built around the way the real showcase will
-              read. Search the cohort, narrow by track, then open a project for
+              read. Search the archive, narrow by track, then open a project for
               the full story.
             </p>
           </div>
@@ -180,8 +180,9 @@ export function ProjectsPage() {
 
         <p className="sample-note">
           <Icon name="info" size={15} />
-          All interns, projects and dates shown here are fictional sample
-          records. Only company-approved work would appear in a live gallery.
+          Five existing Phase 2 projects, each linked to its public deployment.
+          Only work cleared for public display should appear in a production
+          gallery.
         </p>
       </div>
 

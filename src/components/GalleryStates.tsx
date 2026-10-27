@@ -49,7 +49,7 @@ export function GalleryError({ demo, message, onRetry }: GalleryErrorProps) {
       {demo === 'error' ? (
         <p className="state-hint">
           <Icon name="info" size={15} />
-          Previewing the error state. Retrying restores the sample gallery.
+          Previewing the error state. Retrying restores the gallery.
         </p>
       ) : null}
       <button className="btn btn-primary" onClick={onRetry} type="button">
@@ -76,8 +76,8 @@ export function EmptyGallery({ demo }: EmptyGalleryProps) {
       <p className="state-kicker">Nothing published yet</p>
       <h3 id="gallery-empty-title">The gallery is waiting for its first project.</h3>
       <p className="state-copy">
-        Only company-approved work appears here. Once the Phase 2 review is
-        complete, projects will fill this space.
+        Only work cleared for public display appears here. Once new projects
+        are approved, they will fill this space.
       </p>
       {demo === 'empty' ? (
         <p className="state-hint">
@@ -116,8 +116,8 @@ export function NoResults({ onReset, query, track }: NoResultsProps) {
         No projects found{description ? ` for ${description}` : ''}.
       </h3>
       <p className="state-copy">
-        Try a different spelling, search by the intern’s name, or widen the track
-        filter.
+        Try a different spelling, search by the creator’s name, or widen the
+        track filter.
       </p>
       <button className="btn btn-primary" onClick={onReset} type="button">
         Clear search and filters

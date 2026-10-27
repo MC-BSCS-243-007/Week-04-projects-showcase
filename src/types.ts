@@ -1,4 +1,4 @@
-export const TRACKS = ['Web app', 'Dashboard', 'E-commerce', 'Mobile'] as const
+export const TRACKS = ['Web app', 'E-commerce'] as const
 
 export type Track = (typeof TRACKS)[number]
 

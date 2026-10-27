@@ -1095,7 +1095,7 @@ ol {
   font-size: 0.66rem;
 }
 
-.sample-word {
+.live-word {
   color: var(--teal-ink);
   font-weight: 700;
 }
@@ -1775,10 +1775,10 @@ ol {
   text-transform: uppercase;
 }
 
-.flag-sample {
-  border: 1px solid var(--line);
+.flag-live {
+  border: 1px solid rgba(24, 181, 154, 0.32);
   background: var(--tint-2);
-  color: var(--muted);
+  color: var(--teal-ink);
 }
 
 .flag-track {
